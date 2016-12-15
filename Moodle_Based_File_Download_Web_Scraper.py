@@ -27,6 +27,8 @@ files_to_download = []
 indirect_links = []
 updated_courses = []
 
+# YAYDAYADYADYADYAD 
+
 def Open_iLearn_Session(url,USERNAME,PASSWORD, Cur_Session):
 
     with requests.Session() as c:
