@@ -2,9 +2,11 @@
 #Welcome. This is a basic web scraper used at SF State to automate downloading of files uploaded to Moodle (iLearn). It is still an early version. This will only work with Moodle based LMS
 #However, it is highly customized for our workflow, so in this current state it probably is useless to anyone else. However, as a proof of concept, hopefully it will help you somehow.
 
+# THIS IS JUST A PROOF OF CONCEPT. THIS SCRIPT WAS DESIGNED SPECIFICALLY FOR THE SF STATE ECOSYSTM. PLEASE DON'T TRY TO RUN.
+
 import requests #used to make HTTP requests
 from bs4 import BeautifulSoup #a webscaper 
-import re #regular expressions used for parsing strings
+import re #regular expressions used for parsing download link strings
 import os #for accessing the operating system file structure
 
 
@@ -17,8 +19,9 @@ USERNAME = # Put username here
 PASSWORD = # Put password here
 
 # The script relies on 2 static text files and an additional text file for every course you search. 
-# The proceedure is as follows: The script launches and looks for a .txt file containing a URL to each individual course webpage. A HTTP .Get request is made for that page and all content is
-# loaded into memory. The BS4 webscraper then isolates download links and places them into the 'files_to_download' list. 
+# The proceedure is as follows: The script launches and looks for a .txt file containing a URL to each individual course webpage. An HTTP GET request is made for that page and all content is
+# loaded into memory. The BS4 webscraper then isolates download links and places them into the 'files_to_download' list. Each download link is checked against a .txt file containing previous
+# downloads so the scraper won't download duplicate files.
 
 files_to_download = []
 indirect_links = []
