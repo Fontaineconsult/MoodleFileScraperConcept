@@ -4,6 +4,14 @@
 
 # THIS IS JUST A PROOF OF CONCEPT. THIS SCRIPT WAS DESIGNED SPECIFICALLY FOR THE SF STATE ECOSYSTM. PLEASE DON'T TRY TO RUN.
 
+# With this proof of concept, I'd like to figure out a way to develope a general downloader for any campus using Moodle. 
+
+#1 Student request all files on Moodle be converted for accessibility. (30 sites. I really don't want to search them all, everyday for updates)
+#2 Moodle course page URL loaded copied into .txt file.
+#3 Script is run and all files on all the pages are downloaded. Script tracks downloads so no duplicates.
+#4 Assistants convert files and send to student
+#5 Accessible media coordinator gets to watch youtube :)
+
 import requests #used to make HTTP requests
 from bs4 import BeautifulSoup #a webscaper 
 import re #regular expressions used for parsing download link strings
@@ -27,7 +35,8 @@ files_to_download = []
 indirect_links = []
 updated_courses = []
 
-# YAYDAYADYADYADYAD 
+
+#Sorry. Had the whole thing commented but forgot to save before commiting. I'll update later. 
 
 def Open_iLearn_Session(url,USERNAME,PASSWORD, Cur_Session):
 
